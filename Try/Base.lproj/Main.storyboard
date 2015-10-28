@@ -47,17 +47,33 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nophotoselected" translatesAutoresizingMaskIntoConstraints="NO" id="aBT-K6-RVg">
+                                <rect key="frame" x="44" y="289" width="240" height="128"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6od-O8-h3w" appends="YES" id="97C-W6-uWc"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="field" destination="QWy-FU-ldZ" id="5eP-tL-MvJ"/>
+                        <outlet property="photoImageView" destination="aBT-K6-RVg" id="zXZ-jg-ytu"/>
                         <outlet property="text" destination="nH2-yY-Lne" id="b2T-VA-c2i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6od-O8-h3w">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="zTj-A5-RRU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="341" y="282"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="nophotoselected" width="640" height="640"/>
+    </resources>
 </document>

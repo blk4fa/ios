@@ -96,7 +96,7 @@
 				TargetAttributes = {
 					1776E9051BD5CA050091B56C = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = Z362GHA655;
+						DevelopmentTeam = Q5L3WQ2Y9A;
 					};
 				};
 			};
@@ -254,7 +254,7 @@
 				INFOPLIST_FILE = Try/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.cs.virgina.Events;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.cs.virgina.EventsScheduler;
 				PRODUCT_NAME = Events;
 				PROVISIONING_PROFILE = "";
 			};
@@ -268,7 +268,7 @@
 				INFOPLIST_FILE = Try/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.cs.virgina.Events;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.cs.virgina.EventsScheduler;
 				PRODUCT_NAME = Events;
 				PROVISIONING_PROFILE = "";
 			};
