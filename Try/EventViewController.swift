@@ -9,7 +9,7 @@
 import UIKit
 import EventKit
 
-class EventViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EventViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: Properties
     @IBOutlet weak var field: UITextField!
@@ -26,6 +26,8 @@ class EventViewController: UIViewController, UIImagePickerControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        field.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +44,18 @@ class EventViewController: UIViewController, UIImagePickerControllerDelegate, UI
             // Set the event to be passed to EventTableViewController after the unwind segue.
             event = Event(name: name)
         }
+    }
+    
+    
+    // MARK: UITextFieldDelegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        // Hide the keyboard.
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        field.text = textField.text
     }
     
     
@@ -83,9 +97,10 @@ class EventViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
 
     @IBAction func pressed(sender: UIButton) {
+        
         text.text = field.text
         let name = field.text!
-      let eventStore = EKEventStore()
+        let eventStore = EKEventStore()
         
         eventStore.requestAccessToEntityType(EKEntityType.Event, completion: {granted, error in
         self.text.text = "fail1"})
