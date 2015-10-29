@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8mm-ec-hd8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="a0k-O8-HGh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Event-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="EventViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -57,6 +57,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Event" id="Q76-MJ-esD">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1dU-oA-6Fm"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Dhh-y3-1RP"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="field" destination="QWy-FU-ldZ" id="5eP-tL-MvJ"/>
                         <outlet property="photoImageView" destination="aBT-K6-RVg" id="zXZ-jg-ytu"/>
@@ -70,9 +74,9 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="341" y="282"/>
+            <point key="canvasLocation" x="2849" y="282"/>
         </scene>
-        <!--Event Table View Controller-->
+        <!--Events-->
         <scene sceneID="QLD-6h-aBe">
             <objects>
                 <tableViewController id="8mm-ec-hd8" customClass="EventTableViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,7 +86,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventTableViewCell" rowHeight="90" id="VZK-cz-w00" customClass="EventTableViewCell" customModule="Events" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="90"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VZK-cz-w00" id="cm0-cR-Y0T">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
@@ -106,10 +110,53 @@
                             <outlet property="delegate" destination="8mm-ec-hd8" id="qRH-ar-Dmw"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Events" id="ElC-Iz-LdY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aAK-zr-B7b">
+                            <connections>
+                                <segue destination="2Bl-mT-Wku" kind="presentation" identifier="AddItem" id="h1t-mQ-Gtg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2om-qC-BCD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1115" y="282"/>
+            <point key="canvasLocation" x="1339" y="282"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XV1-i2-pkK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a0k-O8-HGh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6eJ-QR-oi8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8mm-ec-hd8" kind="relationship" relationship="rootViewController" id="JA4-od-vjN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ieR-hs-dPn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="527" y="282"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3H8-29-CR2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Bl-mT-Wku" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="boB-be-dAG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="PWd-cN-9Ce"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="52X-GI-TpS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2037" y="282"/>
         </scene>
     </scenes>
     <resources>

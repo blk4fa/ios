@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  EventViewController.swift
 //  Try
 //
 //  Created by Brooke Kanarek on 10/19/15.
@@ -9,12 +9,18 @@
 import UIKit
 import EventKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EventViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: Properties
     @IBOutlet weak var field: UITextField!
     @IBOutlet weak var text: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    
+    /*
+    This value is either passed by `MealTableViewController` in `prepareForSegue(_:sender:)`
+    or constructed as part of adding a new meal.
+    */
+    var event: Event?
     
     override func viewDidLoad() {
         super.viewDidLoad()
