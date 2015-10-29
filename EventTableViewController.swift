@@ -105,5 +105,16 @@ class EventTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func unwindToEventList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as? EventViewController, event = sourceViewController.event {
+            
+            // Add a new event.
+            let newIndexPath = NSIndexPath(forRow: events.count, inSection: 0)
+            events.append(event)
+            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+            
+        }
+    }
 
 }

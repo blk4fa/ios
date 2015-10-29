@@ -59,15 +59,21 @@
                     </view>
                     <navigationItem key="navigationItem" title="Event" id="Q76-MJ-esD">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1dU-oA-6Fm"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Dhh-y3-1RP"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Dhh-y3-1RP">
+                            <connections>
+                                <segue destination="buJ-d7-FqP" kind="unwind" unwindAction="unwindToEventList:" id="CBU-Vp-VQG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="field" destination="QWy-FU-ldZ" id="5eP-tL-MvJ"/>
                         <outlet property="photoImageView" destination="aBT-K6-RVg" id="zXZ-jg-ytu"/>
+                        <outlet property="saveButton" destination="Dhh-y3-1RP" id="cWa-TU-E8s"/>
                         <outlet property="text" destination="nH2-yY-Lne" id="b2T-VA-c2i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="buJ-d7-FqP" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="6od-O8-h3w">
                     <connections>
                         <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="zTj-A5-RRU"/>

@@ -16,6 +16,7 @@ class EventViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var text: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
     
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     /*
     This value is either passed by `MealTableViewController` in `prepareForSegue(_:sender:)`
     or constructed as part of adding a new meal.
@@ -32,6 +33,16 @@ class EventViewController: UIViewController, UIImagePickerControllerDelegate, UI
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: Navigation
+    // This method lets you configure a view controller before it's presented.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if saveButton === sender {
+            let name = text.text ?? ""
+            
+            // Set the event to be passed to EventTableViewController after the unwind segue.
+            event = Event(name: name)
+        }
+    }
     
     
     // MARK: Actions
@@ -84,7 +95,7 @@ let calendars = eventStore.calendarsForEntityType(EKEntityType.Event)
 for calendar in calendars {
     // 2
     if calendar.title == "Calendar" {
-        text.text = field.text! + " added"
+        text.text = field.text!
         // 3
         let startDate = NSDate()
         // 2 hours
@@ -108,9 +119,6 @@ for calendar in calendars {
         catch{
             text.text = "fail2"
         }
-        
-        
-        
         
     }
 }
