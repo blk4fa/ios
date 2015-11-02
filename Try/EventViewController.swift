@@ -8,6 +8,7 @@
 
 import UIKit
 import EventKit
+import CoreData
 
 class EventViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -18,10 +19,12 @@ class EventViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     /*
-    This value is either passed by `MealTableViewController` in `prepareForSegue(_:sender:)`
-    or constructed as part of adding a new meal.
+    This value is either passed by `EventTableViewController` in `prepareForSegue(_:sender:)`
+    or constructed as part of adding a new event.
     */
     var event: Event?
+    
+    let managedObjectContext = DataController().managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +45,22 @@ class EventViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
             let name = text.text ?? ""
             
             // Set the event to be passed to EventTableViewController after the unwind segue.
-            event = Event(name: name)
+            //event = Event(name: name)
+            
+            event = NSEntityDescription.insertNewObjectForEntityForName("EventEntity", inManagedObjectContext: self.managedObjectContext) as? Event
+            
+            event!.name = name
+            
+            do {
+                try self.managedObjectContext.save()
+            } catch {
+                fatalError("Failure to save context: \(error)")
+            }
+            
         }
     }
+    
+    
     
     
     // MARK: UITextFieldDelegate
@@ -109,7 +125,7 @@ class EventViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
 let calendars = eventStore.calendarsForEntityType(EKEntityType.Event)
 for calendar in calendars {
     // 2
-    if calendar.title == "Calendar" {
+    if calendar.title == "Home" { // Calendar
         text.text = field.text!
         // 3
         let startDate = NSDate()

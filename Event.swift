@@ -2,24 +2,16 @@
 //  Event.swift
 //  Events
 //
-//  Created by Jacqueline Tran on 10/28/15.
+//  Created by Jacqueline Tran on 11/2/15.
 //  Copyright © 2015 Brooke Kanarek. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import CoreData
 
-class Event {
-    // MARK: Properties
-    
-    var name: String
-    
-    // MARK: Initialization
-    
-    init?(name: String) {
-        self.name = name
-        
-        if name.isEmpty {
-            return nil
-        }
-    }
+@objc(Event) class Event: NSManagedObject {
+
+    // Insert code here to add functionality to your managed object subclass
+    @NSManaged var name: String?
+
 }
