@@ -109,7 +109,7 @@ class EventViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
 let calendars = eventStore.calendarsForEntityType(EKEntityType.Event)
 for calendar in calendars {
     // 2
-    if calendar.title == "Calendar" {
+    if calendar.title == "Calendar" { 
         text.text = field.text!
         // 3
         let startDate = NSDate()

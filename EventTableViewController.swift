@@ -17,8 +17,14 @@ class EventTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Load the sample data.
-        loadSampleEvents()
+        // Load any saved events, otherwise load sample data.
+        if let savedEvents = loadEvents() {
+            events += savedEvents
+        } else {
+            // Load the sample data.
+            loadSampleEvents()
+        }
+
     }
 
     func loadSampleEvents() {
@@ -74,6 +80,7 @@ class EventTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            // saveEvents()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -114,7 +121,23 @@ class EventTableViewController: UITableViewController {
             events.append(event)
             tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
             
+            saveEvents()
+            
         }
+    }
+    
+    // MARK: NSCoding
+    
+    func saveEvents() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(events, toFile: Event.ArchiveURL.path!)
+        
+        if !isSuccessfulSave {
+            print("Failed to save events...")
+        }
+    }
+    
+    func loadEvents() -> [Event]? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Event.ArchiveURL.path!) as? [Event]
     }
 
 }
