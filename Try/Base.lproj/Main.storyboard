@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="a0k-O8-HGh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="a0k-O8-HGh">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--Event-->
@@ -41,12 +41,6 @@
                                     <action selector="pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yoD-OD-itz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nothing added" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nH2-yY-Lne">
-                                <rect key="frame" x="20" y="244" width="263" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nophotoselected" translatesAutoresizingMaskIntoConstraints="NO" id="aBT-K6-RVg">
                                 <rect key="frame" x="44" y="289" width="240" height="128"/>
                                 <gestureRecognizers/>
@@ -54,6 +48,22 @@
                                     <outletCollection property="gestureRecognizers" destination="6od-O8-h3w" appends="YES" id="97C-W6-uWc"/>
                                 </connections>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONX-jO-8CP">
+                                <rect key="frame" x="80" y="486" width="126" height="30"/>
+                                <state key="normal" title="Choose Location"/>
+                                <connections>
+                                    <segue destination="inY-oa-9nl" kind="show" identifier="locationSegue" id="2Vj-mR-GAo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nothing added" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nH2-yY-Lne">
+                                <rect key="frame" x="20" y="244" width="263" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="44" y="244" width="263" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -81,6 +91,98 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2849" y="282"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="omB-Ah-be4">
+            <objects>
+                <viewController id="inY-oa-9nl" customClass="MapViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rdb-sR-Hxb"/>
+                        <viewControllerLayoutGuide type="bottom" id="hKF-zv-txk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hvT-ui-te0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JJk-LM-7xA">
+                                <rect key="frame" x="8" y="41" width="360" height="466"/>
+                                <gestureRecognizers/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="-1" y="41" width="311" height="458"/>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="zXT-d8-BNS" appends="YES" id="g0a-kZ-BQh"/>
+                                </connections>
+                            </mapView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f64-Cv-XJO">
+                                <rect key="frame" x="0.0" y="10" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Map" id="UJi-t9-mwa"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nD0-T5-d3e">
+                                <rect key="frame" x="140" y="518" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="saveLocation" id="Dyx-OZ-Rgc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mapView" destination="JJk-LM-7xA" id="v8J-6c-9Jo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4GR-W4-ien" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="zXT-d8-BNS">
+                    <connections>
+                        <action selector="chooseLocation:" destination="inY-oa-9nl" id="hzn-RT-Hxb"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3516" y="292.5"/>
+        </scene>
+        <!--Event Map Controller-->
+        <scene sceneID="g2d-YP-Qxc">
+            <objects>
+                <viewController id="kAG-Fr-7Ja" customClass="EventMapController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4ef-qH-0fZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="HB4-tM-RVJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PQe-O1-VmF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bdc-Va-uJP">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="315" height="585"/>
+                                </variation>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="bdc-Va-uJP"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="bdc-Va-uJP"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="bdc-Va-uJP" id="vYI-Pa-HTn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZN9-eA-LFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1330.5" y="-564"/>
         </scene>
         <!--Events-->
         <scene sceneID="QLD-6h-aBe">
@@ -117,6 +219,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Events" id="ElC-Iz-LdY">
+                        <barButtonItem key="leftBarButtonItem" title="Map" id="Dtq-bO-frU">
+                            <connections>
+                                <segue destination="kAG-Fr-7Ja" kind="show" id="rdN-uD-2vh"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aAK-zr-B7b">
                             <connections>
                                 <segue destination="2Bl-mT-Wku" kind="presentation" identifier="AddItem" id="h1t-mQ-Gtg"/>
@@ -168,4 +275,7 @@
     <resources>
         <image name="nophotoselected" width="640" height="640"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Dyx-OZ-Rgc"/>
+    </inferredMetricsTieBreakers>
 </document>
