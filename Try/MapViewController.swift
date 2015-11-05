@@ -28,7 +28,9 @@ class MapViewController: UIViewController,CLLocationManagerDelegate {
     var yC: Double!
     var start: Bool!
     var name: String!
-   
+    var comment: String!
+    var pic: UIImage!
+    
     @IBOutlet weak var mapView: MKMapView!
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -162,22 +164,15 @@ class MapViewController: UIViewController,CLLocationManagerDelegate {
         point.title = name
         mapView.addAnnotation(point)
     }
-   /* @IBAction func chooseLocation(sender: AnyObject) {
-        let location = sender.locationInView(mapView)
-        let locCoord = self.mapView.convertPoint(location, toCoordinateFromView:self.mapView  )
-        
-        
-        point.coordinate = locCoord
-        point.title = name
-        mapView.addAnnotation(point)
-        
-    }*/
     
      override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "saveLocation") {
-            let svc = segue.destinationViewController as! EventViewController;
+            let svc = segue.destinationViewController as! EventViewController
             svc.xCoord = xC
             svc.yCoord = yC
+            svc.eventName = name
+            svc.labelString = comment
+            svc.photo = pic
             
         }
 

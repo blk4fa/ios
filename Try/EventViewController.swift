@@ -27,6 +27,10 @@ class EventViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     var xCoord: Double?
     var yCoord: Double?
     
+    var eventName: String?
+    var labelString: String?
+    var photo: UIImage?
+    
     let managedObjectContext = DataController().managedObjectContext
     
     override func viewDidLoad() {
@@ -35,7 +39,19 @@ class EventViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
        
         
         field.delegate = self
-    }
+        
+        if eventName != nil{
+            field.text = eventName
+        }
+        
+        if labelString != nil{
+            text.text = labelString! + " added"
+        }
+        if photo != nil{
+         photoImageView.image = photo
+        }
+        
+        }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -76,8 +92,11 @@ class EventViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         }
         
         if (segue.identifier == "locationSegue") {
-            let svc = segue.destinationViewController as! MapViewController;
+            let navvc = segue.destinationViewController as! UINavigationController;
+            let svc = navvc.viewControllers.first as! MapViewController
             svc.name = field.text
+            svc.comment = text.text
+            svc.pic = photoImageView.image
         }
 
     }

@@ -34,12 +34,7 @@ class EventTableViewController: UITableViewController {
         }
     }
 
-//    func loadSampleEvents() {
-//        let event1 = Event(name: "Concert")!
-//        let event2 = Event(name: "Wedding")!
-//        
-//        events += [event1, event2]
-//    }
+
     
     func fetch() {
         let moc = self.managedObjectContext
@@ -79,7 +74,7 @@ class EventTableViewController: UITableViewController {
         // Fetches the appropriate event for the data source layout.
         let event = events[indexPath.row]
 
-        cell.eventLabel.text = event.name! + event.descript!
+        cell.eventLabel.text = event.name! //+ event.descript!
         
         return cell
     }
