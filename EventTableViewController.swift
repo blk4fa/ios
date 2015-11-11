@@ -7,31 +7,49 @@
 //
 
 import UIKit
+import CoreData
 
 class EventTableViewController: UITableViewController {
     
     // MARK: Properties
     
     var events = [Event]()
+    
+    
+    let managedObjectContext = DataController().managedObjectContext
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+            
         // Load any saved events, otherwise load sample data.
-        if let savedEvents = loadEvents() {
-            events += savedEvents
-        } else {
-            // Load the sample data.
-            loadSampleEvents()
+//        if let savedEvents = loadEvents() {
+//            events += savedEvents
+//        } else {
+//            // Load the sample data.
+//            loadSampleEvents()
+//        }
+        
+        fetch()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if animated == true {
+            fetch()
         }
-
     }
 
-    func loadSampleEvents() {
-        let event1 = Event(name: "Concert")!
-        let event2 = Event(name: "Wedding")!
+
+    
+    func fetch() {
+        let moc = self.managedObjectContext
+        let eventsFetch = NSFetchRequest(entityName: "EventEntity")
         
-        events += [event1, event2]
+        do {
+            events = try moc.executeFetchRequest(eventsFetch) as! [Event]
+        } catch {
+            fatalError("Failed to fetch events: \(error)")
+        }
     }
     
     
@@ -61,7 +79,7 @@ class EventTableViewController: UITableViewController {
         // Fetches the appropriate event for the data source layout.
         let event = events[indexPath.row]
 
-        cell.eventLabel.text = event.name
+        cell.eventLabel.text = event.name! //+ event.descript!
         
         return cell
     }
