@@ -17,17 +17,38 @@ class EventViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     @IBOutlet weak var photoImageView: UIImageView!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    
     /*
-    This value is either passed by `MealTableViewController` in `prepareForSegue(_:sender:)`
-    or constructed as part of adding a new meal.
+    This value is either passed by `EventTableViewController` in `prepareForSegue(_:sender:)`
+    or constructed as part of adding a new event.
     */
     var event: Event?
+    
+    var xCoord: Double?
+    var yCoord: Double?
+    
+    var eventName: String?
+    var labelString: String?
+    var photo: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         field.delegate = self
+        
+        if eventName != nil {
+            field.text = eventName
+        }
+        
+        if labelString != nil{
+            text.text = labelString! + " added"
+        }
+        
+        if photo != nil{
+            photoImageView.image = photo
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +64,27 @@ class EventViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
             
             // Set the event to be passed to EventTableViewController after the unwind segue.
             event = Event(name: name)
+            
+            event!.name = name
+            event!.descript = "this is working"
+            
+            if xCoord == nil {
+                xCoord = 0
+            }
+            if yCoord == nil {
+                yCoord = 0
+            }
+            event!.x = xCoord
+            event!.y = yCoord
+            
+//            if (segue.identifier == "locationSegue") {
+//                let navvc = segue.destinationViewController as! UINavigationController;
+//                let svc = navvc.viewControllers.first as! MapViewController
+//                svc.name = field.text
+//                svc.comment = text.text
+//                svc.pic = photoImageView.image
+//            }
+            
         }
     }
     
@@ -106,38 +148,35 @@ class EventViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         self.text.text = "fail1"})
         
 
-let calendars = eventStore.calendarsForEntityType(EKEntityType.Event)
-for calendar in calendars {
-    // 2
-    if calendar.title == "Calendar" { 
-        text.text = field.text!
-        // 3
-        let startDate = NSDate()
-        // 2 hours
-        let endDate = NSDate()
+        let calendars = eventStore.calendarsForEntityType(EKEntityType.Event)
+        for calendar in calendars {
+            // 2
+            if calendar.title == "Home" {
+                text.text = field.text!
+                // 3
+                let startDate = NSDate()
+                // 2 hours
+                let endDate = NSDate()
+                // 4
+                // Create Event
+                let event = EKEvent(eventStore: eventStore)
+                event.calendar = calendar
+                event.title = name
+                event.startDate = startDate
+                event.endDate = endDate
         
-        // 4
-        // Create Event
-        let event = EKEvent(eventStore: eventStore)
-        event.calendar = calendar
-        
-        event.title = name
-        event.startDate = startDate
-        event.endDate = endDate
-        
-        // 5
-        // Save Event in Calendar
-      //  var error: NSError?
-        do{
-       try eventStore.saveEvent(event, span: EKSpan.ThisEvent)
+                // 5
+                // Save Event in Calendar
+                //  var error: NSError?
+                do {
+                    try eventStore.saveEvent(event, span: EKSpan.ThisEvent)
+                }
+                catch{
+                    text.text = "fail2"
+                }
+            }
         }
-        catch{
-            text.text = "fail2"
-        }
-        
     }
-}
-}
 }
 
 

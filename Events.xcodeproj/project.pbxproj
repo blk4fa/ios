@@ -266,7 +266,7 @@
 				INFOPLIST_FILE = Try/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.cs.virgina.EventsScheduler;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.cs.virgina.Evsched1112;
 				PRODUCT_NAME = Events;
 				PROVISIONING_PROFILE = "";
 			};
@@ -280,7 +280,7 @@
 				INFOPLIST_FILE = Try/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.cs.virgina.EventsScheduler;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.cs.virgina.Evsched1112;
 				PRODUCT_NAME = Events;
 				PROVISIONING_PROFILE = "";
 			};

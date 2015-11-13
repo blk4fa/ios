@@ -12,6 +12,9 @@ class Event: NSObject, NSCoding {
     // MARK: Properties
     
     var name: String
+    var descript: String?
+    var x: NSNumber?
+    var y: NSNumber?
     
     // MARK: Archiving Paths
     
