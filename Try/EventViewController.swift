@@ -31,8 +31,6 @@ class EventViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     var labelString: String?
     var photo: UIImage?
     
-    let managedObjectContext = DataController().managedObjectContext
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -65,9 +63,7 @@ class EventViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
             let name = text.text ?? ""
             
             // Set the event to be passed to EventTableViewController after the unwind segue.
-            //event = Event(name: name)
-            
-            event = NSEntityDescription.insertNewObjectForEntityForName("EventEntity", inManagedObjectContext: self.managedObjectContext) as? Event
+            event = Event(name: name)
             
             event!.name = name
           event!.descript = "this is working"
@@ -82,12 +78,6 @@ class EventViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
             
             event!.x = xCoord
             event!.y = yCoord
-            
-            do {
-                try self.managedObjectContext.save()
-            } catch {
-                fatalError("Failure to save context: \(error)")
-            }
             
         }
         
@@ -166,7 +156,7 @@ class EventViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
 let calendars = eventStore.calendarsForEntityType(EKEntityType.Event)
 for calendar in calendars {
     // 2
-    if calendar.title == "Calendar" {
+    if calendar.title == "Home" {
         text.text = field.text!
         // 3
         let startDate = NSDate()

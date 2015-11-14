@@ -15,9 +15,6 @@
 		17826A261BE987F800013D89 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17826A251BE987F800013D89 /* MapViewController.swift */; };
 		17826A321BE9981700013D89 /* EventMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17826A311BE9981700013D89 /* EventMapController.swift */; };
 		FF4E72CD1BE7A57400C226F8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4E72CC1BE7A57400C226F8 /* CoreData.framework */; };
-		FF4E72D01BE7A5B000C226F8 /* EventsDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF4E72CE1BE7A5B000C226F8 /* EventsDataModel.xcdatamodeld */; };
-		FF4E72D21BE7E3A000C226F8 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4E72D11BE7E3A000C226F8 /* DataController.swift */; };
-		FF4E72D91BE7FE4200C226F8 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4E72D71BE7FE4200C226F8 /* Event+CoreDataProperties.swift */; };
 		FF4E72DA1BE7FE4200C226F8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4E72D81BE7FE4200C226F8 /* Event.swift */; };
 		FF8A1CE11BE18524008830C7 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8A1CE01BE18524008830C7 /* EventTableViewCell.swift */; };
 		FF8A1CE31BE18B40008830C7 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8A1CE21BE18B40008830C7 /* EventTableViewController.swift */; };
@@ -34,9 +31,6 @@
 		17826A251BE987F800013D89 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		17826A311BE9981700013D89 /* EventMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMapController.swift; sourceTree = "<group>"; };
 		FF4E72CC1BE7A57400C226F8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		FF4E72CF1BE7A5B000C226F8 /* EventsDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventsDataModel.xcdatamodel; sourceTree = "<group>"; };
-		FF4E72D11BE7E3A000C226F8 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = SOURCE_ROOT; };
-		FF4E72D71BE7FE4200C226F8 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FF4E72D81BE7FE4200C226F8 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		FF8A1CE01BE18524008830C7 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		FF8A1CE21BE18B40008830C7 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -57,7 +51,6 @@
 		1776E8FD1BD5CA050091B56C = {
 			isa = PBXGroup;
 			children = (
-				FF4E72D71BE7FE4200C226F8 /* Event+CoreDataProperties.swift */,
 				FF4E72D81BE7FE4200C226F8 /* Event.swift */,
 				FF4E72CC1BE7A57400C226F8 /* CoreData.framework */,
 				1776E9081BD5CA060091B56C /* Events */,
@@ -76,7 +69,6 @@
 		1776E9081BD5CA060091B56C /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				FF4E72CE1BE7A5B000C226F8 /* EventsDataModel.xcdatamodeld */,
 				1776E9091BD5CA060091B56C /* AppDelegate.swift */,
 				1776E90B1BD5CA060091B56C /* EventViewController.swift */,
 				1776E90D1BD5CA060091B56C /* Main.storyboard */,
@@ -85,7 +77,6 @@
 				1776E9121BD5CA060091B56C /* LaunchScreen.storyboard */,
 				1776E9151BD5CA060091B56C /* Info.plist */,
 				FF8A1CE01BE18524008830C7 /* EventTableViewCell.swift */,
-				FF4E72D11BE7E3A000C226F8 /* DataController.swift */,
 				17826A251BE987F800013D89 /* MapViewController.swift */,
 				17826A311BE9981700013D89 /* EventMapController.swift */,
 			);
@@ -165,11 +156,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF4E72DA1BE7FE4200C226F8 /* Event.swift in Sources */,
-				FF4E72D21BE7E3A000C226F8 /* DataController.swift in Sources */,
-				FF4E72D01BE7A5B000C226F8 /* EventsDataModel.xcdatamodeld in Sources */,
 				FF8A1CE11BE18524008830C7 /* EventTableViewCell.swift in Sources */,
 				17826A261BE987F800013D89 /* MapViewController.swift in Sources */,
-				FF4E72D91BE7FE4200C226F8 /* Event+CoreDataProperties.swift in Sources */,
 				1776E90C1BD5CA060091B56C /* EventViewController.swift in Sources */,
 				17826A321BE9981700013D89 /* EventMapController.swift in Sources */,
 				1776E90A1BD5CA060091B56C /* AppDelegate.swift in Sources */,
@@ -332,20 +320,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		FF4E72CE1BE7A5B000C226F8 /* EventsDataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				FF4E72CF1BE7A5B000C226F8 /* EventsDataModel.xcdatamodel */,
-			);
-			currentVersion = FF4E72CF1BE7A5B000C226F8 /* EventsDataModel.xcdatamodel */;
-			name = EventsDataModel.xcdatamodeld;
-			path = ../EventsDataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 1776E8FE1BD5CA050091B56C /* Project object */;
 }

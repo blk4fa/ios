@@ -7,20 +7,20 @@
 //
 
 import Foundation
-import CoreData
-
-@objc(Event) class Event: NSManagedObject {
 
     // Insert code here to add functionality to your managed object subclass
-    @NSManaged var name: String?
-    @NSManaged var descript: String?
-    @NSManaged var x: NSNumber?
-    @NSManaged var y: NSNumber?
+//    @NSManaged var name: String?
+//    @NSManaged var descript: String?
+//    @NSManaged var x: NSNumber?
+//    @NSManaged var y: NSNumber?
 
 class Event: NSObject, NSCoding {
     // MARK: Properties
     
     var name: String
+    var descript: String?
+    var x: NSNumber?
+    var y: NSNumber?
     
     // MARK: Archiving Paths
     
@@ -32,6 +32,9 @@ class Event: NSObject, NSCoding {
     
     struct PropertyKey {
         static let nameKey = "name"
+        static let descriptKey = "descript"
+        static let xKey =  "x"
+        static let yKey = "y"
     }
     
     // MARK: Initialization

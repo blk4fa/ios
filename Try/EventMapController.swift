@@ -19,8 +19,6 @@ class EventMapController: UIViewController,CLLocationManagerDelegate {
     var yC: Double!
     var start: Bool!
     var name: String!
-    let managedObjectContext = DataController().managedObjectContext
-    
    
     
     @IBOutlet weak var mapView: MKMapView!
@@ -144,7 +142,11 @@ class EventMapController: UIViewController,CLLocationManagerDelegate {
             print("Location services are not enabled")
         }
         start = true;
-        fetch()
+        
+        // Load any saved events
+        if let savedEvents = loadEvents() {
+            events += savedEvents
+        }
         
         for e: Event in events{
         let point = MKPointAnnotation()
@@ -157,15 +159,18 @@ class EventMapController: UIViewController,CLLocationManagerDelegate {
     }
     
     
-    func fetch() {
-        let moc = self.managedObjectContext
-        let eventsFetch = NSFetchRequest(entityName: "EventEntity")
+    // MARK: NSCoding
+    
+    func saveEvents() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(events, toFile: Event.ArchiveURL.path!)
         
-        do {
-            events = try moc.executeFetchRequest(eventsFetch) as! [Event]
-        } catch {
-            fatalError("Failed to fetch events: \(error)")
+        if !isSuccessfulSave {
+            print("Failed to save events...")
         }
+    }
+    
+    func loadEvents() -> [Event]? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Event.ArchiveURL.path!) as? [Event]
     }
     
    /* override func viewWillLayoutSubviews() {
