@@ -11,13 +11,13 @@
 		1776E90C1BD5CA060091B56C /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1776E90B1BD5CA060091B56C /* EventViewController.swift */; };
 		1776E90F1BD5CA060091B56C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1776E90D1BD5CA060091B56C /* Main.storyboard */; };
 		1776E9111BD5CA060091B56C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1776E9101BD5CA060091B56C /* Assets.xcassets */; };
-		1776E9141BD5CA060091B56C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1776E9121BD5CA060091B56C /* LaunchScreen.storyboard */; };
 		17826A261BE987F800013D89 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17826A251BE987F800013D89 /* MapViewController.swift */; };
 		17826A321BE9981700013D89 /* EventMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17826A311BE9981700013D89 /* EventMapController.swift */; };
 		FF4E72CD1BE7A57400C226F8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4E72CC1BE7A57400C226F8 /* CoreData.framework */; };
 		FF4E72DA1BE7FE4200C226F8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4E72D81BE7FE4200C226F8 /* Event.swift */; };
 		FF8A1CE11BE18524008830C7 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8A1CE01BE18524008830C7 /* EventTableViewCell.swift */; };
 		FF8A1CE31BE18B40008830C7 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8A1CE21BE18B40008830C7 /* EventTableViewController.swift */; };
+		FFEB45491BF81452007E8C6F /* EventCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB45481BF81452007E8C6F /* EventCategoriesViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +26,6 @@
 		1776E90B1BD5CA060091B56C /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		1776E90E1BD5CA060091B56C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1776E9101BD5CA060091B56C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1776E9131BD5CA060091B56C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1776E9151BD5CA060091B56C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17826A251BE987F800013D89 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		17826A311BE9981700013D89 /* EventMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMapController.swift; sourceTree = "<group>"; };
@@ -34,6 +33,7 @@
 		FF4E72D81BE7FE4200C226F8 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		FF8A1CE01BE18524008830C7 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		FF8A1CE21BE18B40008830C7 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		FFEB45481BF81452007E8C6F /* EventCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCategoriesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,11 +74,11 @@
 				1776E90D1BD5CA060091B56C /* Main.storyboard */,
 				FF8A1CE21BE18B40008830C7 /* EventTableViewController.swift */,
 				1776E9101BD5CA060091B56C /* Assets.xcassets */,
-				1776E9121BD5CA060091B56C /* LaunchScreen.storyboard */,
 				1776E9151BD5CA060091B56C /* Info.plist */,
 				FF8A1CE01BE18524008830C7 /* EventTableViewCell.swift */,
 				17826A251BE987F800013D89 /* MapViewController.swift */,
 				17826A311BE9981700013D89 /* EventMapController.swift */,
+				FFEB45481BF81452007E8C6F /* EventCategoriesViewController.swift */,
 			);
 			name = Events;
 			path = Try;
@@ -142,7 +142,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1776E9141BD5CA060091B56C /* LaunchScreen.storyboard in Resources */,
 				1776E9111BD5CA060091B56C /* Assets.xcassets in Resources */,
 				1776E90F1BD5CA060091B56C /* Main.storyboard in Resources */,
 			);
@@ -160,6 +159,7 @@
 				17826A261BE987F800013D89 /* MapViewController.swift in Sources */,
 				1776E90C1BD5CA060091B56C /* EventViewController.swift in Sources */,
 				17826A321BE9981700013D89 /* EventMapController.swift in Sources */,
+				FFEB45491BF81452007E8C6F /* EventCategoriesViewController.swift in Sources */,
 				1776E90A1BD5CA060091B56C /* AppDelegate.swift in Sources */,
 				FF8A1CE31BE18B40008830C7 /* EventTableViewController.swift in Sources */,
 			);
@@ -174,14 +174,6 @@
 				1776E90E1BD5CA060091B56C /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		1776E9121BD5CA060091B56C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1776E9131BD5CA060091B56C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -276,7 +268,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Try/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.cs.virgina.Events2;
 				PRODUCT_NAME = Events;
@@ -290,7 +282,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Try/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.cs.virgina.Events2;
 				PRODUCT_NAME = Events;

@@ -14,6 +14,7 @@ class EventTableViewController: UITableViewController {
     // MARK: Properties
     
     var events = [Event]()
+    var eventsCategory: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()

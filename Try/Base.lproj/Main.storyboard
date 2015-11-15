@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="a0k-O8-HGh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gCf-Ee-HbE">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -155,7 +154,8 @@
                                         <exclude reference="TYo-Q6-5yQ"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="186" y="148" width="30" height="30"/>
                                     <mask key="constraints">
                                         <include reference="TYo-Q6-5yQ"/>
                                     </mask>
@@ -440,29 +440,58 @@
             </objects>
             <point key="canvasLocation" x="3453" y="996"/>
         </scene>
-        <!--Events-->
+        <!--Available-->
         <scene sceneID="QLD-6h-aBe">
             <objects>
                 <tableViewController id="8mm-ec-hd8" customClass="EventTableViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="8HQ-H1-9yb">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" id="8HQ-H1-9yb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventTableViewCell" rowHeight="40" id="VZK-cz-w00" customClass="EventTableViewCell" customModule="Events" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="40"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VZK-cz-w00" id="cm0-cR-Y0T">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="39"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oR-Kr-srL">
-                                            <rect key="frame" x="105" y="8" width="487" height="21"/>
+                                            <rect key="frame" x="8" y="8" width="584" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="558" id="kqN-Ds-onF"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="kqN-Ds-onF"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="kqN-Ds-onF"/>
+                                                </mask>
+                                            </variation>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="5oR-Kr-srL" firstAttribute="leading" secondItem="cm0-cR-Y0T" secondAttribute="leadingMargin" constant="26" id="hi7-yZ-O9c"/>
+                                        <constraint firstItem="5oR-Kr-srL" firstAttribute="top" secondItem="cm0-cR-Y0T" secondAttribute="topMargin" id="tyW-az-kN6"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="hi7-yZ-O9c"/>
+                                            <exclude reference="tyW-az-kN6"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="hi7-yZ-O9c"/>
+                                            <include reference="tyW-az-kN6"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="eventLabel" destination="5oR-Kr-srL" id="TBR-Ug-5Yj"/>
@@ -474,7 +503,7 @@
                             <outlet property="delegate" destination="8mm-ec-hd8" id="qRH-ar-Dmw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Events" id="ElC-Iz-LdY">
+                    <navigationItem key="navigationItem" title="Available" id="ElC-Iz-LdY">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aAK-zr-B7b">
                             <connections>
                                 <segue destination="2Bl-mT-Wku" kind="presentation" identifier="AddItem" id="h1t-mQ-Gtg"/>
@@ -484,7 +513,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2om-qC-BCD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1339" y="282"/>
+            <point key="canvasLocation" x="1338" y="282"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XV1-i2-pkK">
@@ -503,6 +532,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ieR-hs-dPn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="527" y="282"/>
+        </scene>
+        <!--Events-->
+        <scene sceneID="98p-lz-cHx">
+            <objects>
+                <viewController id="5c2-IJ-2hB" customClass="EventCategoriesViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ICw-Ys-XFo"/>
+                        <viewControllerLayoutGuide type="bottom" id="kT3-Wt-YTb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vCO-yO-KOx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Nge-bb-Lze">
+                                <rect key="frame" x="157" y="157" width="264" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ia-SC-7po">
+                                        <rect key="frame" x="0.0" y="0.0" width="61" height="30"/>
+                                        <state key="normal" title="Available"/>
+                                        <connections>
+                                            <segue destination="8mm-ec-hd8" kind="show" identifier="availableSegue" id="VGY-u8-41o"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxT-wq-q4G">
+                                        <rect key="frame" x="111" y="0.0" width="73" height="30"/>
+                                        <state key="normal" title="Scheduled"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xg3-D2-JFU">
+                                        <rect key="frame" x="234" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="Past"/>
+                                    </button>
+                                </subviews>
+                                <variation key="widthClass=compact" axis="vertical"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nge-bb-Lze" firstAttribute="centerY" secondItem="vCO-yO-KOx" secondAttribute="centerY" id="pAX-eh-QdD"/>
+                            <constraint firstItem="Nge-bb-Lze" firstAttribute="centerX" secondItem="vCO-yO-KOx" secondAttribute="centerX" id="qbX-9b-qof"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="pAX-eh-QdD"/>
+                                <exclude reference="qbX-9b-qof"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="pAX-eh-QdD"/>
+                                <include reference="qbX-9b-qof"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Events" id="KT0-dd-eCs"/>
+                    <connections>
+                        <outlet property="availableButton" destination="5ia-SC-7po" id="QeZ-WV-5Zx"/>
+                        <outlet property="pastButton" destination="xg3-D2-JFU" id="9V1-Mi-Gtr"/>
+                        <outlet property="scheduledButton" destination="XxT-wq-q4G" id="4Sl-aT-wb3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fRD-lv-GYa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1338" y="-570"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3H8-29-CR2">
@@ -540,12 +632,30 @@
             </objects>
             <point key="canvasLocation" x="3469" y="291"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bEy-B5-ZYi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gCf-Ee-HbE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VyK-zT-0R3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5c2-IJ-2hB" kind="relationship" relationship="rootViewController" id="gwS-lo-bin"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hxX-8T-w7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1338" y="-1298"/>
+        </scene>
     </scenes>
     <resources>
         <image name="nophotoselected" width="640" height="640"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QEf-MJ-2mF"/>
+        <segue reference="VGY-u8-41o"/>
         <segue reference="QB3-bQ-Ifl"/>
     </inferredMetricsTieBreakers>
 </document>
