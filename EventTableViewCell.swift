@@ -11,7 +11,6 @@ import UIKit
 class EventTableViewCell: UITableViewCell {
 
     // MARK: Properties
-    
     @IBOutlet weak var eventLabel: UILabel!
     
     override func awakeFromNib() {

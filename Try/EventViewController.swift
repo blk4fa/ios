@@ -47,8 +47,11 @@ class EventViewController: UIViewController, UITextFieldDelegate, UINavigationCo
         
         field.delegate = self
         
-        if eventName != nil{
+        if eventName != nil {
             field.text = eventName
+        }
+        if event?.name != nil {
+            field.text = event?.name
         }
         
         if labelString != nil{
@@ -86,8 +89,16 @@ class EventViewController: UIViewController, UITextFieldDelegate, UINavigationCo
     }
 
     // MARK: Navigation
-    @IBAction func cancel(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func cancel(sender: UIBarButtonItem) {        
+        // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
+        let isPresentingInAddEventMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddEventMode {
+            dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            navigationController!.popViewControllerAnimated(true)
+        }
+        
     }
     
     
