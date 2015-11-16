@@ -8,16 +8,11 @@
 
 import Foundation
 
-    // Insert code here to add functionality to your managed object subclass
-//    @NSManaged var name: String?
-//    @NSManaged var descript: String?
-//    @NSManaged var x: NSNumber?
-//    @NSManaged var y: NSNumber?
-
 class Event: NSObject, NSCoding {
     // MARK: Properties
     
     var name: String
+    var eventCategory: String?
     var descript: String?
     var x: NSNumber?
     var y: NSNumber?
@@ -32,6 +27,7 @@ class Event: NSObject, NSCoding {
     
     struct PropertyKey {
         static let nameKey = "name"
+        static let categoryKey = "eventCategory"
         static let descriptKey = "descript"
         static let xKey =  "x"
         static let yKey = "y"

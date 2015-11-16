@@ -61,11 +61,13 @@ class EventViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if saveButton === sender {
             let name = text.text ?? ""
+            let eventCategory = "available"
             
             // Set the event to be passed to EventTableViewController after the unwind segue.
             event = Event(name: name)
             
             event!.name = name
+            event!.eventCategory = eventCategory
           event!.descript = "this is working"
             
             if xCoord == nil{
