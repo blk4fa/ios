@@ -29,7 +29,10 @@ class MapViewController: UIViewController,CLLocationManagerDelegate {
     var start: Bool!
     var name: String!
     var comment: String!
-    var pic: UIImage!
+    //new stuff to maintain info
+    var date: NSDate!
+    var descrip: String!
+  //  var pic: UIImage!
     
     @IBOutlet weak var mapView: MKMapView!
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -172,7 +175,10 @@ class MapViewController: UIViewController,CLLocationManagerDelegate {
             svc.yCoord = yC
             svc.eventName = name
             svc.labelString = comment
-            svc.photo = pic
+            //new stuff to maintain info
+            svc.desString = descrip
+            svc.chosenDate = date
+        //    svc.photo = pic
             
         }
 

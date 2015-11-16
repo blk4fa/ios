@@ -14,6 +14,7 @@ class EventTableViewController: UITableViewController {
     // MARK: Properties
     
     var events = [Event]()
+    var eventsCategory: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +52,7 @@ class EventTableViewController: UITableViewController {
         // Fetches the appropriate event for the data source layout.
         let event = events[indexPath.row]
 
-        cell.eventLabel.text = event.name //+ event.descript!
+        cell.eventLabel.text = event.name //+ event.descript! + " " + String(event.x)
         
         return cell
     }
