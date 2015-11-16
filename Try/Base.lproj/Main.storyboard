@@ -77,13 +77,6 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="nophotoselected" translatesAutoresizingMaskIntoConstraints="NO" id="aBT-K6-RVg">
-                                <rect key="frame" x="44" y="289" width="240" height="128"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="6od-O8-h3w" appends="YES" id="97C-W6-uWc"/>
-                                </connections>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONX-jO-8CP">
                                 <rect key="frame" x="80" y="486" width="126" height="30"/>
                                 <constraints>
@@ -104,7 +97,8 @@
                                         <include reference="ph9-3j-p2T"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="137" y="468" width="126" height="30"/>
                                     <mask key="constraints">
                                         <include reference="Qhw-ME-Sip"/>
                                         <include reference="l5M-Oi-glq"/>
@@ -168,38 +162,28 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ONX-jO-8CP" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="1jK-xk-0TT"/>
-                            <constraint firstItem="aBT-K6-RVg" firstAttribute="centerX" secondItem="ONX-jO-8CP" secondAttribute="centerX" id="1pV-TN-MmR"/>
                             <constraint firstItem="QWy-FU-ldZ" firstAttribute="top" secondItem="3IA-nL-sBx" secondAttribute="bottom" constant="8" symbolic="YES" id="4o0-sP-F1I"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ONX-jO-8CP" secondAttribute="bottom" constant="58" id="5bv-Zr-QRO"/>
                             <constraint firstItem="nH2-yY-Lne" firstAttribute="leading" secondItem="3IA-nL-sBx" secondAttribute="leading" id="5cG-tU-9F5"/>
                             <constraint firstItem="nH2-yY-Lne" firstAttribute="centerX" secondItem="ONX-jO-8CP" secondAttribute="centerX" id="8QX-3u-DVj"/>
                             <constraint firstItem="T2Y-z1-3ch" firstAttribute="centerX" secondItem="nH2-yY-Lne" secondAttribute="centerX" id="CbY-P4-1Wk"/>
                             <constraint firstItem="3IA-nL-sBx" firstAttribute="trailing" secondItem="nH2-yY-Lne" secondAttribute="trailing" id="Eww-wH-Wr6"/>
-                            <constraint firstItem="ONX-jO-8CP" firstAttribute="top" secondItem="aBT-K6-RVg" secondAttribute="bottom" constant="8" symbolic="YES" id="FMd-b4-cW5"/>
                             <constraint firstItem="3IA-nL-sBx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="29" id="GLo-xq-MqO"/>
                             <constraint firstItem="T2Y-z1-3ch" firstAttribute="top" secondItem="QWy-FU-ldZ" secondAttribute="bottom" constant="24" id="HFY-D9-z2y"/>
                             <constraint firstItem="3IA-nL-sBx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ID9-2p-BpY"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ONX-jO-8CP" secondAttribute="bottom" constant="8" symbolic="YES" id="K6m-t2-FHl"/>
-                            <constraint firstItem="aBT-K6-RVg" firstAttribute="leading" secondItem="QWy-FU-ldZ" secondAttribute="leading" id="KMQ-VP-lWk"/>
-                            <constraint firstItem="aBT-K6-RVg" firstAttribute="top" secondItem="T2Y-z1-3ch" secondAttribute="bottom" constant="27" id="Mdg-2n-yxK"/>
                             <constraint firstItem="ONX-jO-8CP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="PhR-t5-HsP"/>
                             <constraint firstItem="nH2-yY-Lne" firstAttribute="top" secondItem="T2Y-z1-3ch" secondAttribute="bottom" constant="8" symbolic="YES" id="RPk-0n-eKS"/>
                             <constraint firstItem="zcV-eu-rJB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="244" id="Tp5-T9-ggL"/>
                             <constraint firstItem="3IA-nL-sBx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="UlW-jT-Ey1"/>
-                            <constraint firstItem="ONX-jO-8CP" firstAttribute="top" secondItem="aBT-K6-RVg" secondAttribute="bottom" constant="35" id="Vdy-hi-K2i"/>
                             <constraint firstItem="QWy-FU-ldZ" firstAttribute="top" secondItem="3IA-nL-sBx" secondAttribute="bottom" constant="24" id="W4R-rd-eti"/>
                             <constraint firstAttribute="bottom" secondItem="zcV-eu-rJB" secondAttribute="bottom" constant="156" id="cNS-l7-fpq"/>
                             <constraint firstItem="zcV-eu-rJB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="82" id="dwR-DC-nyx"/>
                             <constraint firstItem="T2Y-z1-3ch" firstAttribute="centerX" secondItem="QWy-FU-ldZ" secondAttribute="centerX" id="hX3-lX-xIc"/>
-                            <constraint firstItem="aBT-K6-RVg" firstAttribute="top" secondItem="nH2-yY-Lne" secondAttribute="bottom" constant="8" symbolic="YES" id="ioT-8n-e09"/>
                             <constraint firstItem="nH2-yY-Lne" firstAttribute="centerX" secondItem="T2Y-z1-3ch" secondAttribute="centerX" id="j0f-WQ-bdd"/>
-                            <constraint firstItem="aBT-K6-RVg" firstAttribute="top" secondItem="nH2-yY-Lne" secondAttribute="bottom" constant="54" id="jOb-LV-IoG"/>
                             <constraint firstItem="zcV-eu-rJB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="82" id="m6d-Kz-jiy"/>
                             <constraint firstItem="3IA-nL-sBx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="oi7-1s-MVe"/>
                             <constraint firstItem="QWy-FU-ldZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="pSb-wp-VYr"/>
-                            <constraint firstItem="aBT-K6-RVg" firstAttribute="trailing" secondItem="QWy-FU-ldZ" secondAttribute="trailing" id="rLQ-4f-YyO"/>
-                            <constraint firstItem="aBT-K6-RVg" firstAttribute="centerX" secondItem="nH2-yY-Lne" secondAttribute="centerX" id="sPf-wP-9At"/>
-                            <constraint firstItem="aBT-K6-RVg" firstAttribute="leading" secondItem="QWy-FU-ldZ" secondAttribute="leading" id="ueX-TQ-qGH"/>
                             <constraint firstItem="nH2-yY-Lne" firstAttribute="top" secondItem="QWy-FU-ldZ" secondAttribute="bottom" constant="31" id="w6U-YI-pXA"/>
                             <constraint firstItem="QWy-FU-ldZ" firstAttribute="centerX" secondItem="3IA-nL-sBx" secondAttribute="centerX" id="xna-82-5eE"/>
                             <constraint firstItem="T2Y-z1-3ch" firstAttribute="top" secondItem="QWy-FU-ldZ" secondAttribute="bottom" constant="3" id="y5x-JF-XqU"/>
@@ -230,18 +214,8 @@
                                 <exclude reference="cNS-l7-fpq"/>
                                 <exclude reference="dwR-DC-nyx"/>
                                 <exclude reference="m6d-Kz-jiy"/>
-                                <exclude reference="1pV-TN-MmR"/>
-                                <exclude reference="KMQ-VP-lWk"/>
-                                <exclude reference="Mdg-2n-yxK"/>
-                                <exclude reference="ioT-8n-e09"/>
-                                <exclude reference="jOb-LV-IoG"/>
-                                <exclude reference="rLQ-4f-YyO"/>
-                                <exclude reference="sPf-wP-9At"/>
-                                <exclude reference="ueX-TQ-qGH"/>
                                 <exclude reference="1jK-xk-0TT"/>
-                                <exclude reference="FMd-b4-cW5"/>
                                 <exclude reference="PhR-t5-HsP"/>
-                                <exclude reference="Vdy-hi-K2i"/>
                                 <exclude reference="5bv-Zr-QRO"/>
                                 <exclude reference="K6m-t2-FHl"/>
                             </mask>
@@ -258,12 +232,7 @@
                                 <include reference="w6U-YI-pXA"/>
                                 <include reference="cNS-l7-fpq"/>
                                 <include reference="m6d-Kz-jiy"/>
-                                <include reference="Mdg-2n-yxK"/>
-                                <include reference="ioT-8n-e09"/>
-                                <include reference="sPf-wP-9At"/>
-                                <include reference="ueX-TQ-qGH"/>
                                 <include reference="1jK-xk-0TT"/>
-                                <include reference="FMd-b4-cW5"/>
                                 <include reference="PhR-t5-HsP"/>
                                 <include reference="K6m-t2-FHl"/>
                             </mask>
@@ -283,11 +252,6 @@
                                 <include reference="j0f-WQ-bdd"/>
                                 <include reference="Tp5-T9-ggL"/>
                                 <include reference="dwR-DC-nyx"/>
-                                <include reference="1pV-TN-MmR"/>
-                                <include reference="KMQ-VP-lWk"/>
-                                <include reference="jOb-LV-IoG"/>
-                                <include reference="rLQ-4f-YyO"/>
-                                <include reference="Vdy-hi-K2i"/>
                                 <include reference="5bv-Zr-QRO"/>
                             </mask>
                         </variation>
@@ -306,18 +270,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="field" destination="QWy-FU-ldZ" id="5eP-tL-MvJ"/>
-                        <outlet property="photoImageView" destination="aBT-K6-RVg" id="zXZ-jg-ytu"/>
                         <outlet property="saveButton" destination="Dhh-y3-1RP" id="cWa-TU-E8s"/>
                         <outlet property="text" destination="nH2-yY-Lne" id="b2T-VA-c2i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="buJ-d7-FqP" userLabel="Exit" sceneMemberID="exit"/>
-                <tapGestureRecognizer id="6od-O8-h3w">
-                    <connections>
-                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="zTj-A5-RRU"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4650" y="282"/>
         </scene>
@@ -592,7 +550,7 @@
         <!--Event-->
         <scene sceneID="Ycm-U6-xdL">
             <objects>
-                <viewController id="Hhk-al-8Uz" sceneMemberID="viewController">
+                <viewController id="Hhk-al-8Uz" customClass="PastEventViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hJZ-EN-v9f"/>
                         <viewControllerLayoutGuide type="bottom" id="aDg-DI-LXV"/>
@@ -603,9 +561,13 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nophotoselected" translatesAutoresizingMaskIntoConstraints="NO" id="7ub-WY-HGL">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <gestureRecognizers/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="41" y="102" width="318" height="217"/>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="dkl-17-aUe" appends="YES" id="XZJ-Uh-9zT"/>
+                                </connections>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WZl-h8-PVS">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -632,10 +594,18 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Event" id="fL4-dc-MGu"/>
+                    <connections>
+                        <outlet property="photoImageView" destination="7ub-WY-HGL" id="mrd-P4-4FS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3D-0G-JDc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dkl-17-aUe">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="Hhk-al-8Uz" id="9OM-Tg-sQ4"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4998" y="1793"/>
+            <point key="canvasLocation" x="4956" y="1793"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3H8-29-CR2">
