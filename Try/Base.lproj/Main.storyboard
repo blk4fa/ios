@@ -464,12 +464,14 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="5oR-Kr-srL" firstAttribute="bottom" secondItem="cm0-cR-Y0T" secondAttribute="bottomMargin" id="ER6-WG-KEc"/>
                                         <constraint firstItem="5oR-Kr-srL" firstAttribute="trailing" secondItem="cm0-cR-Y0T" secondAttribute="trailingMargin" id="QWO-6z-4gO"/>
                                         <constraint firstItem="5oR-Kr-srL" firstAttribute="top" secondItem="cm0-cR-Y0T" secondAttribute="topMargin" id="UJB-Hm-yW6"/>
                                         <constraint firstItem="5oR-Kr-srL" firstAttribute="leading" secondItem="cm0-cR-Y0T" secondAttribute="leadingMargin" id="WVT-Nl-GVD"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="ER6-WG-KEc"/>
                                             <exclude reference="QWO-6z-4gO"/>
                                             <exclude reference="UJB-Hm-yW6"/>
                                             <exclude reference="WVT-Nl-GVD"/>
@@ -477,6 +479,7 @@
                                     </variation>
                                     <variation key="widthClass=compact">
                                         <mask key="constraints">
+                                            <include reference="ER6-WG-KEc"/>
                                             <include reference="QWO-6z-4gO"/>
                                             <include reference="UJB-Hm-yW6"/>
                                             <include reference="WVT-Nl-GVD"/>
@@ -509,19 +512,43 @@
         <!--Scheduled-->
         <scene sceneID="T1e-QE-Fkq">
             <objects>
-                <tableViewController id="oQE-cd-pyV" sceneMemberID="viewController">
+                <tableViewController id="oQE-cd-pyV" customClass="EventTableViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4Xw-xG-VcD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="unx-6W-Haj">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTableViewCell" id="unx-6W-Haj" customClass="EventTableViewCell" customModule="Events" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="unx-6W-Haj" id="9x8-Yx-9r5">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h39-mF-d44">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="8" y="8" width="384" height="27"/>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="h39-mF-d44"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="h39-mF-d44"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="eventLabel" destination="h39-mF-d44" id="7wk-46-krt"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
